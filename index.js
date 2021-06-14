@@ -5,5 +5,5 @@ const PORT = 7800 || process.env.PORT;
 // option for it
 
 server.listen(PORT, () => {
-    console.log(`\n** server is listening at ${port}** \n`)
+    console.log(`\n** server is listening at ${PORT}** \n`)
 })
