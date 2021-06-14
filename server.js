@@ -18,7 +18,15 @@ if (process.env.NODE_ENV === 'development') {
 // self-contained program.
 
 server.get('/', (req, res) => {
+    throw new Error('whoops')
     res.json({message: 'Welcome to the API Home'});
+})
+
+server.use((err, req, res, next) => {
+   res.status(res.statusCode || 500).json({
+       error: err.message,
+       message: "something went wrong, try again"
+   })
 })
 
 module.exports = server;
