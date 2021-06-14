@@ -18,7 +18,11 @@ if (process.env.NODE_ENV === 'development') {
 // self-contained program.
 
 server.get('/', (req, res) => {
-    res.json({message: 'Welcome to the API Home'});
+    res.json({message: `Welcome to the API Home ${process.env.GUEST}`});
+})
+
+server.get('/dashboard', (req, res) => {
+    res.json({message: `Welcome ${process.env.USER}`});
 })
 
 server.use((err, req, res, next) => {
