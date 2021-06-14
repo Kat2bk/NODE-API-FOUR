@@ -18,7 +18,6 @@ if (process.env.NODE_ENV === 'development') {
 // self-contained program.
 
 server.get('/', (req, res) => {
-    throw new Error('whoops')
     res.json({message: 'Welcome to the API Home'});
 })
 
